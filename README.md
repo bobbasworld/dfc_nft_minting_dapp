@@ -1,6 +1,6 @@
 # Welcome to HashLips 👄
 
-![](https://github.com/HashLips/hashlips_nft_minting_dapp/blob/main/logo.png)
+![](https://github.com/HashLips/hashlips_nft_minting_dapp/blob/main/minting-app-logo.svg)
 
 All the code in these repos was created and explained by HashLips on the main YouTube channel.
 
@@ -74,7 +74,7 @@ Note: this dapp is designed to work with the intended NFT smart contract, that o
 Make sure you copy the contract ABI from remix and paste it in the `public/config/abi.json` file.
 (follow the youtube video if you struggle with this part).
 
-Now you will need to create and change 2 images and a gif in the `public/config/images` folder, `bg.png`, `example.gif` and `logo.png`.
+Now you will need to create and change 2 images and a gif in the `public/config/images` folder, `dfc-hero-bg.svg`, `dfcgif.gif` and `minting-app-logo.svg`.
 
 Next change the theme colors to your liking in the `public/config/theme.css` file.
 
