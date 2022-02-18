@@ -66,9 +66,9 @@ export const ResponsiveWrapper = styled.div`
 `;
 
 export const StyledLogo = styled.img`
-  width: 200px;
+  width: 300px;
   @media (min-width: 767px) {
-    width: 300px;
+    width: 500px;
   }
   transition: width 0.5s;
   transition: height 0.5s;
@@ -76,7 +76,7 @@ export const StyledLogo = styled.img`
 
 export const StyledImg = styled.img`
   box-shadow: 0px 5px 11px 2px rgba(0, 0, 0, 0.7);
-  border: 4px dashed var(--secondary);
+  border: 4px solid var(--primary);
   background-color: var(--accent);
   border-radius: 100%;
   width: 200px;
@@ -90,7 +90,7 @@ export const StyledImg = styled.img`
 `;
 
 export const StyledLink = styled.a`
-  color: var(--secondary);
+  color: var(--primary-text);
   text-decoration: none;
 `;
 
@@ -111,7 +111,7 @@ function App() {
     },
     NFT_NAME: "",
     SYMBOL: "",
-    MAX_SUPPLY: 1,
+    MAX_SUPPLY: 200,
     WEI_COST: 0,
     DISPLAY_COST: 0,
     GAS_LIMIT: 0,
@@ -201,7 +201,7 @@ function App() {
         style={{ padding: 24}}
         image={CONFIG.SHOW_BACKGROUND ? "/config/images/dfc-hero-bg.svg" : null}
       >
-        <StyledLogo alt={"logo"} src={"/config/images/minting-app-logo.svg"} />
+        <StyledLogo alt={"logo"} src={"/config/images/minting-dapp-logo.svg"} />
         <s.SpacerSmall />
         <ResponsiveWrapper flex={1} style={{ padding: 24 }} test>
           <s.Container flex={1} jc={"center"} ai={"center"}>
@@ -216,7 +216,7 @@ function App() {
               backgroundColor: "var(--accent)",
               padding: 24,
               borderRadius: 24,
-              border: "4px dashed var(--secondary)",
+              border: "4px solid var(--primary)",
               boxShadow: "0px 5px 11px 2px rgba(0,0,0,0.7)",
             }}
           >
@@ -230,16 +230,15 @@ function App() {
             >
               {data.totalSupply} / {CONFIG.MAX_SUPPLY}
             </s.TextTitle>
-            <s.TextDescription
+            {blockchain.account ? ( <s.TextDescription
               style={{
                 textAlign: "center",
                 color: "var(--primary-text)",
               }}
             >
-              <StyledLink target={"_blank"} href={CONFIG.SCAN_LINK}>
-                {truncate(CONFIG.CONTRACT_ADDRESS, 15)}
-              </StyledLink>
-            </s.TextDescription>
+            {/* Connected wallet:&nbsp;&nbsp;{truncate(String(blockchain?.account), 15)} */}
+            Connected wallet:&nbsp;&nbsp;{blockchain?.account}
+            </s.TextDescription>) : null}
             <s.SpacerSmall />
             {Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
               <>
