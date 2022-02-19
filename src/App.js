@@ -111,7 +111,7 @@ function App() {
     },
     NFT_NAME: "",
     SYMBOL: "",
-    MAX_SUPPLY: 200,
+    MAX_SUPPLY: 6779,
     WEI_COST: 0,
     DISPLAY_COST: 0,
     GAS_LIMIT: 0,
@@ -278,10 +278,10 @@ function App() {
                     <s.TextDescription
                       style={{
                         textAlign: "center",
-                        color: "var(--accent-text)",
+                        color: "var(--danger)",
                       }}
                     >
-                      Connect to the {CONFIG.NETWORK.NAME} network
+                      Connect to the {CONFIG.NETWORK.NAME} network!
                     </s.TextDescription>
                     <s.SpacerSmall />
                     <StyledButton
@@ -382,7 +382,7 @@ function App() {
           <s.TextDescription
             style={{
               textAlign: "center",
-              color: "var(--primary-text)",
+              color: "var(--primary)",
             }}
           >
             Please make sure you are connected to the right network (
@@ -393,7 +393,7 @@ function App() {
           <s.TextDescription
             style={{
               textAlign: "center",
-              color: "var(--primary-text)",
+              color: "var(--primary)",
             }}
           >
             We have set the gas limit to {CONFIG.GAS_LIMIT} for the contract to
